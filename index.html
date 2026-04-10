@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   background: var(--sand);
-  text-align: center;
+  color: var(--chocolate);
 }
 
 /* ==================== HEADER ==================== */
@@ -42,14 +42,6 @@ body {
   z-index: 999;
 }
 
-.card-aromas {
-    font-size: 0.8rem;
-    color: #666;
-    text-align: center;
-    line-height: 1.4;
-    margin: 0;
-    font-style: italic;
-}
 
 /* LOGO ACHICADO */
 .logo-pro {
@@ -317,11 +309,20 @@ h1 {
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 67px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
   z-index: 10000;
   transition: all 0.3s ease;
 }
+
+.card-aromas {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+  font-style: italic;
+} 
 
 /* BADGE DEL CARRITO */
 #btn-carrito::after {
@@ -386,9 +387,9 @@ h1 {
 
   /* bajar carrito en celular */
   .carrito {
-    top: 110px;
-    right: 5%;
-    width: 90%;
+  top: 130px;  /* antes 110px → probá 130 o 140 */
+  right: 5%;
+  width: 90%;
   }
 
   /* opcional: bajar un poquito el botón */
