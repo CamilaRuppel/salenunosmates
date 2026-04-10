@@ -380,15 +380,57 @@ h1 {
   transition: background 0.2s ease;
 }
 
-@media (max-width: 600px) {
-  .carrito {
-    top: 70px; /* 👈 mismo valor SIEMPRE */
-    right: 5%;
-    width: 90%;
-  }
+/* ========================
+   AJUSTES PARA CELULAR
+======================== */
+@media (max-width: 768px) {
+    /* Botón más chico y pegado */
+    #btn-carrito {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
 
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    /* Carrito más ancho y ajustado */
+    .carrito {
+        top: 60px;       /* debajo del botón */
+        right: 10px;
+        width: calc(100% - 20px);      /* ocupa casi todo el ancho */
+        max-height: 80vh;
+    }
 }
 
+@media (max-width: 520px) {
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 0;
+    }
+
+    .header-pro {
+        padding: 12px 10px;
+    }
+
+    .descripcion {
+        margin: 30px 10px;
+        font-size: 16px;
+    }
+
+    .carrito {
+        top: 60px;
+        right: 8px;
+        width: calc(100% - 16px);
+    }
+}
 
 </style>
 </head>
