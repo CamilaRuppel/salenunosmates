@@ -37,11 +37,12 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #3E000C;
+  background: transparent;
   padding: 10px 0;
   z-index: 999;
   height: 70px;
   transition: transform 0.3s ease; /* 👈 animación */
+  border-bottom: 1px solid rgba(62, 0, 12, 0.2);
 }
 
 /* estado oculto */
@@ -51,23 +52,28 @@ body {
 
 /* LOGO ACHICADO */
 .logo-pro {
-  width: 50px; /* antes era enorme */
-  height: auto;
-  
+  width: 55px;
+  background-color: #3E000C; /* 👈 fondo bordó */
+  border-radius: 50%;        /* 👈 forma circular */
+  padding: 8px;              /* 👈 espacio alrededor del logo */
+  object-fit: contain;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* TEXTO AL LADO */
 .header-content h1 {
-  font-size: 1.1rem;
-  color: #FFECD1;
-  margin: 0;
-  font-weight: 600;} 
+  color: #3E000C;
+  font-size: 0.9rem;
+  height: 100%;
+  margin-top: 8px; /* 👈 lo baja un poco */
+}
 
 .header-content {
   display: flex;
+  flex-direction: column; /* 👈 esto los pone uno abajo del otro */
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 15px;
 }
 
 h1 {
@@ -88,12 +94,12 @@ h1 {
 
 /* ==================== MAIN CONTAINER ==================== */
 .main-container {
-  margin-top: 80px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
   padding: 20px;
   position: relative;
+  margin-top: 110px;
 }
 
 /* ==================== PRODUCTOS ==================== */
@@ -311,7 +317,7 @@ h1 {
   height: 45px;
   border-radius: 50%;
   border: none;
-  background: #FFECD1;
+  background: #3E000C;
   color: var(--sand);
   font-size: 22px;
   cursor: pointer;
