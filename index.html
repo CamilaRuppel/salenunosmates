@@ -378,27 +378,22 @@ h1 {
 }
 
 /* ==================== MOBILE ==================== */
-/* ==================== MOBILE ==================== */
 @media (max-width: 600px) {
 
-  /* más espacio debajo del header */
-  .main-container {
-    margin-top: 110px;
-  }
-
   .carrito {
-    top: 180px !important;  /* 👈 FORZAMOS */
-    right: 5%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 👈 lo centra perfecto */
+
     width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    right: auto; /* 👈 importante */
   }
 
 }
-
-  /* opcional: bajar un poquito el botón */
-  #btn-carrito {
-    top: 15px;
-    right: 15px;
-  }
 
 </style>
 </head>
