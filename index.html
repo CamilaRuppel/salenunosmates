@@ -40,7 +40,7 @@ body {
   background: #3E000C;
   padding: 10px 0;
   z-index: 999;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease; /* más lento */
 }
 
 /* ocultar al hacer scroll */
@@ -184,8 +184,8 @@ h1 {
 .carrito {
   display: none;
   position: fixed;
-  top: 35px;
-  right: 20px;
+  top: 60px;
+  right: 10px;
   width: 400px;
   max-height: 90vh;
   overflow-y: auto;
@@ -212,6 +212,8 @@ h1 {
   font-size: 16px;
   color: var(--sand);
 }
+
+
 
 /* Items del carrito */
 .item {
@@ -313,7 +315,7 @@ h1 {
   height: 45px;
   border-radius: 50%;
   border: none;
-  background: var(--chocolate);
+  background: #FFECD1;
   color: var(--sand);
   font-size: 22px;
   cursor: pointer;
@@ -532,13 +534,13 @@ h1 {
 </div>
 
 <script>
-  let lastScroll = 0;
 
+let lastScroll = 0;
 window.addEventListener("scroll", () => {
   let header = document.querySelector(".header-pro");
   let currentScroll = window.pageYOffset;
 
-  if (currentScroll > lastScroll && currentScroll > 7) {
+  if (currentScroll > lastScroll && currentScroll > 90) {
     // bajando → se oculta rápido y de a poco
     header.classList.add("hide");
   } else if (currentScroll < lastScroll) {
