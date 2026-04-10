@@ -40,6 +40,7 @@ body {
   background: #3E000C;
   padding: 10px 0;
   z-index: 999;
+  height: 70px;
 }
 
 
@@ -170,15 +171,17 @@ h1 {
 .carrito {
   display: none;
   position: fixed;
-  top: 90px;
+
+  top: 70px; /* 👈 EXACTAMENTE la altura del header */
   right: 10px;
+
   width: 400px;
-  max-height: 90vh;
+  max-height: calc(100vh - 80px); /* 👈 para que no se pase */
+
   overflow-y: auto;
   background: var(--sand);
   border-radius: 20px;
   padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   z-index: 1000;
 }
 
@@ -377,23 +380,15 @@ h1 {
   transition: background 0.2s ease;
 }
 
-/* ==================== MOBILE ==================== */
 @media (max-width: 600px) {
-
   .carrito {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* 👈 lo centra perfecto */
-
+    top: 70px; /* 👈 mismo valor SIEMPRE */
+    right: 5%;
     width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-
-    right: auto; /* 👈 importante */
   }
 
 }
+
 
 </style>
 </head>
