@@ -40,8 +40,8 @@ body {
   background: #3E000C;
   padding: 10px 0;
   z-index: 999;
-  transition: transform 0.6s ease; /* más lento */
 }
+
 
 /* LOGO ACHICADO */
 .logo-pro {
@@ -81,7 +81,7 @@ h1 {
 
 /* ==================== MAIN CONTAINER ==================== */
 .main-container {
-  margin-top: 100px;
+  margin-top: 80px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -132,14 +132,6 @@ h1 {
   margin: 8px 0 6px;
 }
 
-.card-aromas {
-  font-size: 0.8rem;
-  color: var(--sand);
-  text-align: center;
-  line-height: 1.4;
-  margin: 0;
-  font-style: italic;
-}
 
 .card:hover {
   transform: scale(1.03);
@@ -178,7 +170,7 @@ h1 {
 .carrito {
   display: none;
   position: fixed;
-  top: 60px;
+  top: 90px;
   right: 10px;
   width: 400px;
   max-height: 90vh;
@@ -379,11 +371,24 @@ h1 {
 /* ==================== MOBILE ==================== */
 @media (max-width: 600px) {
 
-  .carrito {
-    width: 90%;
-    right: 5%;
-    left: 5%;
+  /* más espacio debajo del header */
+  .main-container {
+    margin-top: 110px;
   }
+
+  /* bajar carrito en celular */
+  .carrito {
+    top: 110px;
+    right: 5%;
+    width: 90%;
+  }
+
+  /* opcional: bajar un poquito el botón */
+  #btn-carrito {
+    top: 15px;
+    right: 15px;
+  }
+
 }
 
 </style>
@@ -528,22 +533,6 @@ h1 {
 </div>
 
 <script>
-
-let lastScroll = 0;
-window.addEventListener("scroll", () => {
-  let header = document.querySelector(".header-pro");
-  let currentScroll = window.pageYOffset;
-
-  if (currentScroll > lastScroll && currentScroll > 90) {
-    // bajando → se oculta rápido y de a poco
-    header.classList.add("hide");
-  } else if (currentScroll < lastScroll) {
-    // subiendo → aparece rápido
-    header.classList.remove("hide");
-  }
-
-  lastScroll = currentScroll;
-});
 
 let carrito = [];
 let seleccion = "";
