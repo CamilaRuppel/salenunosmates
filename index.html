@@ -64,8 +64,13 @@ body {
 .header-content h1 {
   color: #3E000C;
   font-size: 0.9rem;
+  transition: opacity 0.3s ease;
   height: 100%;
   margin-top: 8px; /* 👈 lo baja un poco */
+}
+
+.header-content h1.oculto {
+  opacity: 0;
 }
 
 .header-content {
@@ -604,6 +609,16 @@ window.addEventListener("scroll", () => {
   }
 
   lastScroll = currentScroll;
+});
+
+window.addEventListener("scroll", () => {
+  const texto = document.querySelector(".header-content h1");
+
+  if (window.scrollY > 50) {
+    texto.classList.add("oculto");
+  } else {
+    texto.classList.remove("oculto");
+  }
 });
 
 let carrito = [];
