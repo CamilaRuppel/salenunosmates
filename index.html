@@ -41,13 +41,19 @@ body {
   padding: 10px 0;
   z-index: 999;
   height: 70px;
+  transition: transform 0.3s ease; /* 👈 animación */
 }
 
+/* estado oculto */
+.header-pro.hide {
+  transform: translateY(-100%);
+}
 
 /* LOGO ACHICADO */
 .logo-pro {
   width: 50px; /* antes era enorme */
   height: auto;
+  
 }
 
 /* TEXTO AL LADO */
@@ -172,17 +178,18 @@ h1 {
   display: none;
   position: fixed;
 
-  top: 70px; /* 👈 EXACTAMENTE la altura del header */
-  right: 10px;
+  top: 60px;   /* 👈 justo debajo del botón */
+  right: 10px; /* 👈 alineado con el botón */
 
-  width: 400px;
-  max-height: calc(100vh - 80px); /* 👈 para que no se pase */
-
+  width: 350px;
+  max-height: 80vh;
   overflow-y: auto;
+
   background: var(--sand);
   border-radius: 20px;
   padding: 15px;
-  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 9999;
 }
 
 .carrito h2 {
@@ -318,6 +325,7 @@ h1 {
   transition: all 0.3s ease;
 }
 
+
 .card-aromas {
   font-size: 0.8rem;
   color: #666;
@@ -400,10 +408,10 @@ h1 {
 
     /* Carrito más ancho y ajustado */
     .carrito {
-        top: 60px;       /* debajo del botón */
-        right: 10px;
-        width: calc(100% - 20px);      /* ocupa casi todo el ancho */
-        max-height: 80vh;
+    width: 90%;
+    right: 5%;
+    top: 70px;     /* ocupa casi todo el ancho */
+    max-height: 80vh;
     }
 }
 
@@ -431,6 +439,7 @@ h1 {
         width: calc(100% - 16px);
     }
 }
+
 
 </style>
 </head>
@@ -574,6 +583,22 @@ h1 {
 </div>
 
 <script>
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header-pro");
+  const currentScroll = window.scrollY;
+
+  if (currentScroll > lastScroll && currentScroll > 70) {
+    // bajando → se oculta
+    header.classList.add("hide");
+  } else {
+    // subiendo → aparece
+    header.classList.remove("hide");
+  }
+
+  lastScroll = currentScroll;
+});
 
 let carrito = [];
 let seleccion = "";
